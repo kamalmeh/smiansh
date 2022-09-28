@@ -1,0 +1,97 @@
+                                <?php
+                                    if($_SESSION['user']){
+                                        echo '<label style="color:white;">Welcome '.$_SESSION['user'].'</label><a class="nav-link" href="logout.php">Logout</a>';
+                                    } else {
+                                        echo '<a class="nav-link active smiansh_loginbtn" href="login.php">Login</a>';
+                                    }
+                                ?>
+
+
+<?php
+    include "authorization.php";
+    
+    session_start();
+    $time = $_SERVER['REQUEST_TIME'];
+
+    /**
+    * for a 30 minute timeout, specified in seconds
+    */
+    $timeout_duration = 1800;
+
+    /**
+    * Here we look for the user's LAST_ACTIVITY timestamp. If
+    * it's set and indicates our $timeout_duration has passed,
+    * blow away any previous $_SESSION data and start a new one.
+    */
+    if (isset($_SESSION['LAST_ACTIVITY']) && 
+    ($time - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
+        if(isset($_SESSION['id'])){
+            $sql = "CALL checkLoginStp('deactivate','".$_SESSION['id']."',".$timeout_duration.")";
+            $records = $db->query($sql);
+            session_destroy();
+            unset($_SESSION['user']);
+            unset($_SESSION['id']);
+            unset($_SESSION['LAST_ACTIVITY']);
+        } 
+    } else {
+        $sql = "CALL checkLoginStp('activate','".$_SESSION['id']."',null')";
+        $records = $db->query($sql);
+        // header("Refresh: 0; URL=".$_SERVER['HTTP_REFERER']);
+    }
+
+    /**
+    * Finally, update LAST_ACTIVITY so that our timeout
+    * is based on it and not the user's login time.
+    */
+    $_SESSION['LAST_ACTIVITY'] = $time;
+?>
+
+
+USE smianshc_MainDb;
+DROP PROCEDURE IF EXISTS insertQueryStp;
+
+DELIMITER $$
+CREATE PROCEDURE insertQueryStp(Name varchar(50),Email varchar(50),Phone varchar(15),QueryText varchar(1000))
+BEGIN
+	INSERT INTO QueriesTb(Name,Email,Phone,QueryText) VALUES(Name,Email,Phone,QueryText);
+END$$
+DELIMITER ;
+
+
+USE smianshc_MainDb;
+DROP PROCEDURE IF EXISTS updateTokenStp;
+
+DELIMITER $$
+CREATE PROCEDURE `updateTokenStp`(email varchar(50),selector varchar(16),token varchar(64),expiry bigint(20))
+BEGIN
+    DECLARE rCount INT;
+    select count(*) from UserTb where selector=slctr and expires>=time into rCount;
+    IF count = 1 THEN
+		UPDATE UserTb SET Password=Pass where selector=slctr and token=tkn; 
+    END IF;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`smianshc`@`localhost` PROCEDURE `checkLoginStp`(IN `action` VARCHAR(15), IN `id` VARCHAR(50), IN `timeout` INT)
+BEGIN
+	DECLARE expiredCount int;
+    IF action = 'deactivate' THEN
+		SELECT COUNT(*) FROM UserTb WHERE SessionID=id AND (now() - SessionStart) > timeout INTO expiredCount;
+		IF expiredCount > 0 THEN
+			UPDATE UserTb SET SessionActive='D' where SessionID=id;
+		END IF;
+	ELSEIF action = 'activate' THEN
+		UPDATE UserTb SET SessionActive='A',SessionStart=now() where SessionID=id;
+    ELSEIF action = 'logout' THEN
+    	UPDATE UserTb SET SessionActive='D' where SessionID=id;
+    END IF;
+END$$
+DELIMITER ;
+
+Work to be completed
+----------------------------------
+1. Create Buy Service Page
+2. Fill up contact form if user is logged in
+3. Remember Me feature enablement
+4. Admin Page if the user type is admin
