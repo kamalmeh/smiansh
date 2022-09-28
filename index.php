@@ -103,22 +103,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="contact.php">Contact us</a>
                             </li>
-
-                            <li class="nav-item dropdown dropdown-slide dropdown-hover">
-                                
-                                    <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-                                        <form style="margin:0;" id="userUpdate" method="GET" name="userUpdate" action="updateProfile.php">
-                                            <label style="color:#f49727; margin-bottom:0;">Welcome
-                                                
-                                            </label>
-                                        </form>
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#" onClick="document.getElementById('userUpdate').submit();">Edit Profile</a>
-                                        <a class="dropdown-item" href="logout.php">Logout</a>
-                                    </div>
-                                
-                            </li>
                         </ul>
                     </div>
                 </div>
