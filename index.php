@@ -1,44 +1,3 @@
-<?php
-include "authorization.php";
-
-session_start();
-$time = $_SERVER['REQUEST_TIME'];
-
-/**
- * for a 30 minute timeout, specified in seconds
- */
-$timeout_duration = 1800;
-
-/**
- * Here we look for the user's LAST_ACTIVITY timestamp. If
- * it's set and indicates our $timeout_duration has passed,
- * blow away any previous $_SESSION data and start a new one.
- */
-if (
-    isset($_SESSION['LAST_ACTIVITY']) && ($time - $_SESSION['LAST_ACTIVITY']) > $timeout_duration
-) {
-    if (isset($_SESSION['id'])) {
-        $sql = "CALL checkLoginStp('deactivate','" . $_SESSION['id'] . "'," . $timeout_duration . ")";
-        $records = $db->query($sql);
-        session_destroy();
-        unset($_SESSION['user']);
-        unset($_SESSION['id']);
-        unset($_SESSION['LAST_ACTIVITY']);
-    }
-} else {
-    if (isset($_SESSION['id'])) {
-        $sql = "CALL checkLoginStp('activate','" . $_SESSION['id'] . "',null')";
-        $records = $db->query($sql);
-        // header("Refresh: 0; URL=".$_SERVER['HTTP_REFERER']);
-    }
-}
-
-/**
- * Finally, update LAST_ACTIVITY so that our timeout
- * is based on it and not the user's login time.
- */
-$_SESSION['LAST_ACTIVITY'] = $time;
-?>
 <html lang="en">
 
 <head>
@@ -146,13 +105,11 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                             </li>
 
                             <li class="nav-item dropdown dropdown-slide dropdown-hover">
-                                <?php
-                                if (isset($_SESSION['user'])) {
-                                    ?>
+                                
                                     <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
                                         <form style="margin:0;" id="userUpdate" method="GET" name="userUpdate" action="updateProfile.php">
                                             <label style="color:#f49727; margin-bottom:0;">Welcome
-                                                <?php echo $_SESSION['user'] ?>
+                                                
                                             </label>
                                         </form>
                                     </a>
@@ -160,11 +117,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                                         <a class="dropdown-item" href="#" onClick="document.getElementById('userUpdate').submit();">Edit Profile</a>
                                         <a class="dropdown-item" href="logout.php">Logout</a>
                                     </div>
-                                <?php
-                            } else {
-                                echo '<a class="nav-link active smiansh_loginbtn" href="login.php">Login</a>';
-                            }
-                            ?>
+                                
                             </li>
                         </ul>
                     </div>
@@ -533,7 +486,7 @@ $_SESSION['LAST_ACTIVITY'] = $time;
                                     </li>
                                 </ul>
                                 <li>
-                                    <div class="copyrightFooter">Copyrights <span id="spanYear"><?php echo date('Y'); ?></span> © <strong>Smiansh</strong></div>
+                                    <div class="copyrightFooter">Copyrights <span id="spanYear">2022</span> © <strong>Smiansh</strong></div>
                                 </li>
                             </ul>
                         </div>
