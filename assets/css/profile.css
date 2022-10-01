@@ -1,0 +1,23 @@
+html,body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+h2,h3,h4,h5,h6 {
+    font-size: large;
+    padding: 5px;
+}
+
+.row {
+    padding-bottom: 5px;
+}
+
+.bg-row {
+    background-image:url('/assets/image/portfolio_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+}
