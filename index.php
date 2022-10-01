@@ -489,28 +489,34 @@
     <script src="assets/js/jquery.min.js" async defer></script>
     <!-- Popper JS -->
     <script src="assets/js/popper.min.js" async defer></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js" async defer></script>
     <!-- Swiper JS -->
-    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/swiper.min.js" async defer></script>
     <!-- Animation JS -->
-    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/wow.min.js" async defer></script>
     <!-- Custom JS -->
-    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/custom.js" async defer></script>
 
-    <script defer>
-        $("#top").hide();
-        $(window).scroll(function() {
-            if ($(window).scrollTop() > 200) {
-                jQuery("#top").fadeIn(500);
-            } else {
-                $("#top").fadeOut(500);
-            }
-        });
-        $("#top").click(function() {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 1000);
-            return false;
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            var jquery = document.createElement("script");
+            jquery.setAttribute("src", "assets/js/jquery.min.js");
+            jquery.setAttribute("type", "text/javascript");
+            document.head.appendChild(jquery);
+            $("#top").hide();
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 200) {
+                    jQuery("#top").fadeIn(500);
+                } else {
+                    $("#top").fadeOut(500);
+                }
+            });
+            $("#top").click(function() {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 1000);
+                return false;
+            });
         });
     </script>
 
