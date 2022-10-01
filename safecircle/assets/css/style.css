@@ -1,0 +1,14 @@
+html,
+body {
+    font-family: 'Lexend Mega', sans-serif;
+    font-size: small;
+}
+
+.bg-header {
+    background-color: #fda103 !important;
+}
+
+.bg-jumbo {
+    background-color: #fff7ee !important;
+    color: #202020;
+}
