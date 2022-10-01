@@ -1,10 +1,32 @@
 html,body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
     scroll-behavior: smooth;
 }
 
+.nav-bg-dark {
+    background-color: #212121;
+}
+
+.nav-bg-light {
+    background-color: #212121;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    font-size: medium !important;
+    color: #d1d1d1 !important;
+}
+
+.active{
+    font-size: larger !important;
+    font-weight: bold !important;
+}
+
 h2,h3,h4,h5,h6 {
-    font-size: large;
+    font-size: large !important;
     padding: 5px;
 }
 
@@ -20,4 +42,14 @@ h2,h3,h4,h5,h6 {
     margin: 0;
     margin-bottom: 5px;
     width: 100%;
+}
+
+#project {
+    padding-right: 0;
+}
+
+@media screen and (max-width: 575px) {
+    #project {
+      padding-right: calc(var(--bs-gutter-x) * .5);
+    }
 }
