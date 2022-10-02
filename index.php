@@ -480,12 +480,12 @@
         </ul>
         <ul class="nav col-md-12 justify-content-center border-bottom pb-3 mb-3 nav-bg-dark">
             <li class="nav-item">
-                <a class="nav-link px-2 text-white" href="https://www.facebook.com/darshnasmakeover" target="_blank">
+                <a class="nav-link px-2 text-white" href="https://www.facebook.com/smiansh19" target="_blank">
                     <i class="fa fa-facebook-square" aria-hidden="true"></i>&nbsp;<span>Facebook</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link px-2 text-white" href="https://www.instagram.com/darshnas_makeover/" target="_blank">
+                <a class="nav-link px-2 text-white" href="https://www.instagram.com/smiansh_tech/" target="_blank">
                     <i class="fa fa-instagram" aria-hidden="true"></i>&nbsp;<span>Instagram</span>
                 </a>
             </li>
