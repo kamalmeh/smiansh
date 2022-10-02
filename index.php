@@ -13,10 +13,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f6602a9fc.js" SameSite="Secure" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md p-2">
+        <div class="container">
         <a class="navbar-brand">SMI{A}NSH</a>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
             <span class="navbar-toggler-icon"></span>
@@ -24,27 +26,35 @@
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="/#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#experience">Experience</a>
+                    <a class="nav-link" href="/#experience">Experience</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
+                    <a class="nav-link" href="/#projects">Projects</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#achivements">Achivements</a>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#services">Competencies</a>
+                    <a class="nav-link" href="/#skills">Competencies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#education">Education</a>
+                    <a class="nav-link" href="/#education">Education</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Hire Me</a>
+                    <a class="nav-link" href="/#hireme">Hire&nbsp;Me</a>
                 </li>
             </ul>
+            <div id="social-icons" class="d-flex w-100 justify-content-end">
+                <a class="nav-link social-icon social-facebook m-1" href="https://www.facebook.com/smiansh19" target="_blank">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                </a>
+                <a class="nav-link social-icon social-instagram m-1" href="https://www.instagram.com/smiansh_tech/" target="_blank">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
     </nav>    
     <div class="container">
@@ -380,7 +390,7 @@
             </div>
         </section>
         <hr>
-        <section id="services">
+        <section id="skills">
             <div class="row align-items-center">
                 <div class="col col-lg-12 ">
                     <h2 class="bg-success bg-gradient text-white m-0">COMPETENCIES & SKILLS</h2>
@@ -454,7 +464,7 @@
             </div>
         </section>
         <hr>
-        <section id="education">
+        <section id="hireme">
             <div class="row align-items-center">
                 <div class="col col-lg-12 ">
                     <h2 class="bg-success bg-gradient text-white m-0">Hire Me</h2>
@@ -471,25 +481,29 @@
     </div>
     <footer class="py-3 my-4 nav-bg-light">
         <ul class="nav col-md-12 justify-content-center border-bottom pb-3 mb-3 nav-bg-dark">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-white">About</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Experience</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Projects</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Competencies</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Education</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Hire Me</a></li>
+            <li class="nav-item"><a href="/#about" class="nav-link px-2 text-white">About</a></li>
+            <li class="nav-item"><a href="/#experience" class="nav-link px-2 text-white">Experience</a></li>
+            <li class="nav-item"><a href="/#projects" class="nav-link px-2 text-white">Projects</a></li>
+            <li class="nav-item"><a href="/#skills" class="nav-link px-2 text-white">Competencies</a></li>
+            <li class="nav-item"><a href="/#education" class="nav-link px-2 text-white">Education</a></li>
+            <li class="nav-item"><a href="/#hireme" class="nav-link px-2 text-white">Hire Me</a></li>
         </ul>
-        <ul class="nav col-md-12 justify-content-center border-bottom pb-3 mb-3 nav-bg-dark">
-            <li class="nav-item">
+        <div class="nav col-md-12 justify-content-center border-bottom pb-3 mb-3 nav-bg-dark">
+            <!-- <li class="nav-item"> -->
                 <a class="nav-link px-2 text-white" href="https://www.facebook.com/smiansh19" target="_blank">
-                    <i class="fa fa-facebook-square" aria-hidden="true"></i>&nbsp;<span>Facebook</span>
+                    <span class="social-icon social-facebook">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </span>
                 </a>
-            </li>
-            <li class="nav-item">
+            <!-- </li> -->
+            <!-- <li class="nav-item"> -->
                 <a class="nav-link px-2 text-white" href="https://www.instagram.com/smiansh_tech/" target="_blank">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>&nbsp;<span>Instagram</span>
+                    <span class="social-icon social-instagram">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </span>
                 </a>
-            </li>
-        </ul>
+            <!-- </li> -->
+        </div>
         <p class="text-center text-muted nav-bg-light">© 2020 Smiansh Technologies, LLP</p>
     </footer>
     <div id="WAButton" style="z-index: 999"></div>
