@@ -40,7 +40,7 @@
 
                         <h2>Collection of personal information</h2>
 
-                        <p>We receive and store any information you knowingly provide to us when you create an account, fill any online forms in the Mobile Application. When required this information may include your email address, name, phone number, address, or other Personal Information. You can choose not to provide us with certain information, but then you may not be able to take advantage of some of the Mobile Application's features. Users who are uncertain about what information is mandatory are welcome to contact us. At any point of time, if user decides to delete the account, he/she can follow the instructions given at <a href="safecircle//account_deletion.php" target="_blank">Account Deletion</a> page.</p>
+                        <p>We receive and store any information you knowingly provide to us when you create an account, fill any online forms in the Mobile Application. When required this information may include your email address, name, phone number, address, or other Personal Information. You can choose not to provide us with certain information, but then you may not be able to take advantage of some of the Mobile Application's features. Users who are uncertain about what information is mandatory are welcome to contact us. At any point of time, if user decides to delete the account, he/she can follow the instructions given at <a href="/safecircle/account_deletion.php" target="_blank">Account Deletion</a> page.</p>
 
                         <h2>Collection of non-personal information</h2>
 
